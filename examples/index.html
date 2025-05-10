@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast & Loading Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../src/toast.css">
+</head>
+<body>
+    <div class="toast-container" toast-position="top-right"></div>
+
+    <div style="text-align: center; padding: 20px;">
+        <button class="loading" onclick="Toast.show('info', 'Thông tin', 'Đây là thông báo thông tin!', 4000)">Show Info</button>
+        <button class="loading" onclick="Toast.show('success', 'Thành công', 'Dữ liệu đã được lưu!', 4000)">Show Success</button>
+        <button class="loading" onclick="Toast.show('warning', 'Cảnh báo', 'Vui lòng kiểm tra lại!', 4000)">Show Warning</button>
+        <button class="loading" onclick="Toast.show('error', 'Lỗi', 'Có lỗi xảy ra!', 4000)">Show Error</button>
+        <button class="loading" onclick="testLoading(this)">Test Loading</button>
+        <button onclick="Toast.hideAll()">Hide All Toasts</button>
+    </div>
+
+    <script src="../src/toast.js"></script>
+    <script>
+        function testLoading(btn) {
+            Toast.setLoading(btn);
+            setTimeout(() => Toast.clearLoading(btn), 2000);
+        }
+    </script>
+</body>
+</html>
